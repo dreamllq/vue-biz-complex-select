@@ -1,14 +1,20 @@
 import { PropType } from 'vue';
 import { ElTable } from 'element-plus';
 
+type DataRow = any;
+
 export default {
   modelValue: {
-    type: Object as PropType<{id:any} | {id:any}[]>,
+    type: Object as PropType<Record<string, any> | Record<string, any>[]>,
     default: () => ({})
   },
   multiple: {
     type: Boolean,
     default: false
+  },
+  multipleLine: {
+    type: Boolean,
+    default: true
   },
   placeholder: {
     type: String,
@@ -21,6 +27,10 @@ export default {
   dialogTitle: {
     type: String,
     default: ''
+  },
+  dialogWidth: {
+    type: String,
+    default: '1008px'
   },
   filterModel: {
     type: Object,
@@ -42,11 +52,11 @@ export default {
     default: false
   },
   tableDataDisabled: {
-    type: Function,
+    type: Function as PropType<(row:DataRow) => boolean>,
     default: () => (false)
   },
   disabledReason: {
-    type: Function,
+    type: Function as PropType<(row:DataRow) => string>,
     default: () => ('')
   },
   formate: {

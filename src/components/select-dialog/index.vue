@@ -7,7 +7,7 @@
     append-to-body
     align-center
     class='biz-complex-select__dialog'
-    width='1008px'
+    :width='props.dialogWidth'
     @open='onOpen'
     @opened='onOpened'
     @close='onClose'

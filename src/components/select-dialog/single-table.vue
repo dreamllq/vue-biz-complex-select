@@ -79,6 +79,8 @@ onMounted(() => {
   selectData.value = cloneDeep(props.defaultSelect);
   if (selectData.value) {
     emits('selection-change', [cloneDeep(selectData.value)]);
+  } else {
+    emits('selection-change', []);
   }
 });
 

@@ -4,6 +4,7 @@
       :model-value='label'
       readonly
       multiple
+      :multiple-line='props.multipleLine'
       :placeholder='props.placeholder'
       :disabled='props.disabled'
       :clearable='props.clearable'
